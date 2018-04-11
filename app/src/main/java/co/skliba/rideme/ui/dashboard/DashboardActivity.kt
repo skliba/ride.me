@@ -1,7 +1,8 @@
-package co.skliba.rideme
+package co.skliba.rideme.ui.dashboard
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import co.skliba.rideme.R
 
 class DashboardActivity : AppCompatActivity() {
 

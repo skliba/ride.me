@@ -3,4 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- Using white colour here instead of Android's because it breaks on certain Samsung devices -->
+    <color name="white">#FFFFFF</color>
+    <color name="red">#bf0000</color>
 </resources>

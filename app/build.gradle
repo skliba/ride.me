@@ -16,6 +16,11 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
     }
 
     signingConfigs {
@@ -59,11 +64,14 @@ android {
             dimension 'api'
             applicationIdSuffix '.staging'
             signingConfig signingConfigs.development
+            buildConfigField STRING, "BASE_API_URL", "\"https://test.mother.i-ways.hr\""
+
         }
 
         production {
             dimension 'api'
             signingConfig signingConfigs.release
+            buildConfigField STRING, "BASE_API_URL", "https://todo"
         }
 
     }

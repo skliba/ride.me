@@ -3,6 +3,7 @@ package co.skliba.rideme
 import android.app.Activity
 import android.os.StrictMode
 import android.support.multidex.MultiDexApplication
+import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatDelegate
 import co.skliba.rideme.di.AppComponent
 import co.skliba.rideme.di.DaggerAppComponent
@@ -10,14 +11,17 @@ import com.jakewharton.threetenabp.AndroidThreeTen
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
+import dagger.android.support.HasSupportFragmentInjector
 import timber.log.Timber
 import javax.inject.Inject
 
-class RideMeApp : MultiDexApplication(), HasActivityInjector {
+class RideMeApp : MultiDexApplication(), HasActivityInjector, HasSupportFragmentInjector {
 
     @Inject lateinit var activityInjector: DispatchingAndroidInjector<Activity>
+    @Inject lateinit var fragmentInjector: DispatchingAndroidInjector<Fragment>
 
     override fun activityInjector(): AndroidInjector<Activity> = activityInjector
+    override fun supportFragmentInjector(): AndroidInjector<Fragment> = fragmentInjector
 
     companion object {
         lateinit var appComponent: AppComponent

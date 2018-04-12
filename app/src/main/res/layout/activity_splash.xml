@@ -16,7 +16,7 @@
         android:layout_centerInParent="true"
         app:pathColor="@color/white"
         app:pathWidth="@dimen/spacing_0.25x"
-        app:svg="@raw/miscellaneous"/>
+        app:svg="@raw/app_logo"/>
 
     <TextView
         android:id="@+id/appNameText"

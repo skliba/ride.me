@@ -26,7 +26,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(layoutResourceId)
-
+        presenter = providePresenter()
     }
 
     abstract fun providePresenter(): BasePresenter<BaseView>
